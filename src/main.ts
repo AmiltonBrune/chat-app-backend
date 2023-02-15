@@ -16,9 +16,9 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
   const configService = app.get(ConfigService);
 
-  app.enableCors({ credentials: true, origin: 'http://localhost:3000' });
+  app.enableCors();
   app.use(passport.initialize());
 
-  await app.listen(configService.get<number>('PORT'));
+  await app.listen(configService.get<number>('PORT') || 3000);
 }
 bootstrap();
