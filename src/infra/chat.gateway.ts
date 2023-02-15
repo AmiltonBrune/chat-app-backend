@@ -12,9 +12,7 @@ import { UserService, MessageService } from 'src/domain/services';
 import { sortRoomMessageByDate } from 'src/core/utils/utils';
 
 @WebSocketGateway({
-  cors: {
-    origin: `*`,
-  },
+  cors: true,
 })
 export class ChatGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
