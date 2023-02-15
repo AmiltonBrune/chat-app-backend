@@ -12,7 +12,6 @@ import { UserService, MessageService } from 'src/domain/services';
 import { sortRoomMessageByDate } from 'src/core/utils/utils';
 
 @WebSocketGateway({
-  serveClient: false,
   cors: {
     origin: `*`,
   },
