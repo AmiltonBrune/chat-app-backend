@@ -11,7 +11,7 @@ import { Socket, Server } from 'socket.io';
 import { UserService, MessageService } from 'src/domain/services';
 import { sortRoomMessageByDate } from 'src/core/utils/utils';
 
-@WebSocketGateway({ cors: true, origin: 'https://chat-backend.herokuapp.com' })
+@WebSocketGateway({ cors: '*:*' })
 export class ChatGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
 {
