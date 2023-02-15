@@ -11,7 +11,12 @@ import { Socket, Server } from 'socket.io';
 import { UserService, MessageService } from 'src/domain/services';
 import { sortRoomMessageByDate } from 'src/core/utils/utils';
 
-@WebSocketGateway({ cors: '*:*' })
+@WebSocketGateway({
+  serveClient: false,
+  cors: {
+    origin: `*`,
+  },
+})
 export class ChatGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
 {
